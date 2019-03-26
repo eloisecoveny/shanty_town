@@ -1,6 +1,8 @@
 package attractions;
 
-public abstract class Attraction {
+import inhabitants.Visitor;
+
+public abstract class Attraction implements IEnter {
 
     private String name;
 
@@ -10,5 +12,9 @@ public abstract class Attraction {
 
     public String getName(){
         return this.name;
+    }
+
+    public String enter(Visitor visitor){
+        return null;
     }
 }

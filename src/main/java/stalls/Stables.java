@@ -33,5 +33,9 @@ public class Stables extends Stall {
         }
     }
 
+    public String enter(Visitor visitor){
+        return "It's a mighty fine day today ain't it? Whaddya lookin for? Yer can rent a horse for the day if you wanna get outta here.";
+    }
+
 
 }

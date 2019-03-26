@@ -1,9 +1,10 @@
 package stalls;
 
+import attractions.IEnter;
 import attractions.IWork;
 import inhabitants.Visitor;
 
-public class Butchery extends Stall implements IWork {
+public class Butchery extends Stall implements IWork, IEnter {
 
     private String name;
     private String owner;
@@ -21,5 +22,9 @@ public class Butchery extends Stall implements IWork {
     public void sell(Visitor visitor, Item meat){
         double price = ((BuffaloMeat) meat).getPrice();
         visitor.isCharged(price);
+    }
+
+    public String enter(Visitor visitor){
+        return "Hello " + visitor.getName() + ", whaddya want? I've got buffalo legs, buffalo belly and buffalo head! Freshly hunted and slaughtered my friend.";
     }
 }

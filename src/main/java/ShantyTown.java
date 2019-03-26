@@ -1,4 +1,5 @@
 import attractions.Attraction;
+import inhabitants.Visitor;
 import stalls.Stall;
 
 import java.util.ArrayList;
@@ -37,5 +38,13 @@ public class ShantyTown {
 
     public ArrayList<Stall> getStalls(){
         return stalls;
+    }
+
+    public String visit(Visitor visitor, Attraction attraction){
+        return attraction.enter(visitor);
+    }
+
+    public String visit(Visitor visitor, Stall stall){
+        return stall.enter(visitor);
     }
 }

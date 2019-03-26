@@ -1,6 +1,9 @@
 package stalls;
 
-public abstract class Stall {
+import attractions.IEnter;
+import inhabitants.Visitor;
+
+public abstract class Stall implements IEnter {
 
     private String name;
     private String owner;
@@ -22,5 +25,9 @@ public abstract class Stall {
 
     public double getRealEstateValue(){
         return this.realEstateValue;
+    }
+
+    public void enter(Visitor visitor, Stall stall){
+        stall.enter(visitor);
     }
 }

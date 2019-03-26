@@ -17,7 +17,7 @@ public class LiquorStoreTest {
 
     @Before
     public void setup() {
-        liquorStore = new LiquorStore("Whisky Salon", "Richard Mitchell", 650);
+        liquorStore = new LiquorStore("Whisky Saloon", "Richard Mitchell", 650);
 
         visitor = new Visitor("Marlene", 32, 165, 32.40);
         kid = new Visitor("Bobby", 12, 120, 15.00);
@@ -27,7 +27,7 @@ public class LiquorStoreTest {
 
     @Test
     public void hasName(){
-        assertEquals("Whisky Salon", liquorStore.getName());
+        assertEquals("Whisky Saloon", liquorStore.getName());
     }
 
     @Test
@@ -49,5 +49,11 @@ public class LiquorStoreTest {
     @Test
     public void willNotSellAlcoholToUnderagedVisitor(){
         assertEquals("Get outta here or I'll get my gun!", liquorStore.sells(kid, bottleOfLiquer));
+    }
+
+    @Test
+    public void visitorCanEnter(){
+        String response = "You hear the " + liquorStore.getName() + ". What can I get ya? First round is on me.";
+        assertEquals(response, liquorStore.enter(visitor));
     }
 }

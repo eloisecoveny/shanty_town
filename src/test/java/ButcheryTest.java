@@ -46,4 +46,10 @@ public class ButcheryTest {
         butchery.sell(visitor, meat);
         assertEquals(30.20, visitor.getPurse(), 0);
     }
+
+    @Test
+    public void visitorCanEnter(){
+        String response = "Hello " + visitor.getName() + ", whaddya want? I've got buffalo legs, buffalo belly and buffalo head! Freshly hunted and slaughtered my friend.";
+        assertEquals(response, butchery.enter(visitor));
+    }
 }

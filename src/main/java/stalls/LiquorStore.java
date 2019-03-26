@@ -1,8 +1,9 @@
 package stalls;
 
+import attractions.IEnter;
 import inhabitants.Visitor;
 
-public class LiquorStore extends Stall implements ISecurity {
+public class LiquorStore extends Stall implements ISecurity, IEnter {
 
     public LiquorStore(String name, String owner, double realEstateValue){
         super(name, owner, realEstateValue);
@@ -24,7 +25,10 @@ public class LiquorStore extends Stall implements ISecurity {
         } else {
             return "Get outta here or I'll get my gun!";
         }
+    }
 
+    public String enter(Visitor visitor){
+        return "You hear the " + this.getName() + ". What can I get ya? First round is on me.";
     }
 
 }
