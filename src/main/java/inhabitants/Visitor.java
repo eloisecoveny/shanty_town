@@ -1,5 +1,7 @@
 package inhabitants;
 
+import attractions.Museum;
+import attractions.Review;
 import stalls.Horse;
 
 import java.util.ArrayList;
@@ -60,5 +62,10 @@ public class Visitor {
 
     public int horseCount(){
         return this.horses.size();
+    }
+
+    public void writesReview(Museum museum, String body){
+        Review review = new Review(body);
+        museum.leavesReview(review);
     }
 }

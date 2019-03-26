@@ -2,7 +2,7 @@ package attractions;
 
 import inhabitants.Visitor;
 
-public class SteamTrain extends Attraction implements IWork, ITicket {
+public class SteamTrain extends Attraction implements IWork, ITicket, IEnter {
 
     private String name;
 
@@ -17,5 +17,10 @@ public class SteamTrain extends Attraction implements IWork, ITicket {
 
     public void charge(Visitor visitor){
         visitor.isCharged(12.00);
+    }
+
+    public String enter(Visitor visitor){
+        this.charge(visitor);
+        return "All abooooard! Howdy, jump on board. $12 a ticket. Hold on'd'ya hats ladies and gents, toot toooot!";
     }
 }

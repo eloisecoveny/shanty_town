@@ -26,4 +26,10 @@ public class CemetaryTest {
         cemetary.haunt(visitor);
         assertEquals(true, visitor.isHaunted());
     }
+
+    @Test
+    public void visitorCanEnterCemetary(){
+        String response = "You hear the faint howling of the wind, and distant crackling in the surrounding woods. Welcome to the cemetary.";
+        assertEquals(response, cemetary.enter(visitor));
+    }
 }

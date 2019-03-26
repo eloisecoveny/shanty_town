@@ -32,4 +32,11 @@ public class SteamTrainTest {
         steamTrain.charge(visitor);
         assertEquals(138.40, visitor.getPurse(), 0);
     }
+
+    @Test
+    public void visitorCanEnter(){
+        String response = "All abooooard! Howdy, jump on board. $12 a ticket. Hold on'd'ya hats ladies and gents, toot toooot!";
+        assertEquals(response, steamTrain.enter(visitor));
+        assertEquals(138.40, visitor.getPurse(), 0);
+    }
 }
