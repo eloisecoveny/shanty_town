@@ -12,12 +12,16 @@ public class LiquorStoreTest {
 
     public LiquorStore liquorStore;
     public Visitor visitor;
+    public Visitor kid;
     public Item bottleOfLiquer;
 
     @Before
     public void setup() {
         liquorStore = new LiquorStore("Whisky Salon", "Richard Mitchell", 650);
+
         visitor = new Visitor("Marlene", 32, 165, 32.40);
+        kid = new Visitor("Bobby", 12, 120, 15.00);
+
         bottleOfLiquer = new BottleOfLiquor(BottleType.RUM);
     }
 
@@ -38,7 +42,12 @@ public class LiquorStoreTest {
 
     @Test
     public void canSellBottleToVisitor(){
-        liquorStore.sell(visitor, bottleOfLiquer);
+        liquorStore.sells(visitor, bottleOfLiquer);
         assertEquals(26.50, visitor.getPurse(), 0);
+    }
+
+    @Test
+    public void willNotSellAlcoholToUnderagedVisitor(){
+        assertEquals("Get outta here or I'll get my gun!", liquorStore.sells(kid, bottleOfLiquer));
     }
 }

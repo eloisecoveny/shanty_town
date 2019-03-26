@@ -1,5 +1,9 @@
 package inhabitants;
 
+import stalls.Horse;
+
+import java.util.ArrayList;
+
 public class Visitor {
 
     private String name;
@@ -7,6 +11,7 @@ public class Visitor {
     private double height;
     private double purse;
     private boolean haunted;
+    private ArrayList<Horse> horses;
 
     public Visitor(String name, int age, double height, double purse){
         this.name = name;
@@ -14,6 +19,7 @@ public class Visitor {
         this.height = height;
         this.purse = purse;
         this.haunted = false;
+        this.horses = new ArrayList<Horse>();
     }
 
     public Object getName(){
@@ -46,5 +52,13 @@ public class Visitor {
 
     public void isCharged(double fee){
         this.purse -= fee;
+    }
+
+    public void rents(Horse horse){
+        this.horses.add(horse);
+    }
+
+    public int horseCount(){
+        return this.horses.size();
     }
 }

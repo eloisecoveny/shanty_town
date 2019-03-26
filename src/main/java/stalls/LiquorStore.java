@@ -2,7 +2,7 @@ package stalls;
 
 import inhabitants.Visitor;
 
-public class LiquorStore extends Stall implements ISecurity, ISell {
+public class LiquorStore extends Stall implements ISecurity {
 
     public LiquorStore(String name, String owner, double realEstateValue){
         super(name, owner, realEstateValue);
@@ -16,9 +16,15 @@ public class LiquorStore extends Stall implements ISecurity, ISell {
         }
     }
 
-    public void sell(Visitor visitor, Item bottleOfLiquor){
+    public String sells(Visitor visitor, Item bottleOfLiquor){
         double price = ((BottleOfLiquor) bottleOfLiquor).getPrice();
-        visitor.isCharged(price);
+        if(this.isOldEnough(visitor)){
+            visitor.isCharged(price);
+            return "Careful not to drink it all at once kid.";
+        } else {
+            return "Get outta here or I'll get my gun!";
+        }
+
     }
 
 }

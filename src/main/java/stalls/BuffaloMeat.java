@@ -9,6 +9,6 @@ public class BuffaloMeat extends Item {
     }
 
     public double getPrice(){
-        return this.type.getCost();
+        return this.type.getPrice();
     }
 }

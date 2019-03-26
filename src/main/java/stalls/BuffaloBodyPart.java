@@ -6,14 +6,14 @@ public enum BuffaloBodyPart {
     HEAD(2.20),
     BELLY(14.50);
 
-    public final double cost;
+    public final double price;
 
-    BuffaloBodyPart(double cost){
-        this.cost = cost;
+    BuffaloBodyPart(double price){
+        this.price = price;
     }
 
-    public double getCost(){
-        return this.cost;
+    public double getPrice(){
+        return this.price;
     }
 
 }
