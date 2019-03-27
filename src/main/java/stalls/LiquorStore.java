@@ -3,10 +3,15 @@ package stalls;
 import attractions.IEnter;
 import inhabitants.Visitor;
 
+import java.util.ArrayList;
+
 public class LiquorStore extends Stall implements ISecurity, IEnter {
+
+    private ArrayList<BottleOfLiquor> stock;
 
     public LiquorStore(String name, String owner, double realEstateValue){
         super(name, owner, realEstateValue);
+        this.stock = new ArrayList<BottleOfLiquor>();
     }
 
     public boolean isOldEnough(Visitor visitor){

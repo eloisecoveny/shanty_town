@@ -4,14 +4,15 @@ import attractions.IEnter;
 import attractions.IWork;
 import inhabitants.Visitor;
 
+import java.util.ArrayList;
+
 public class Butchery extends Stall implements IWork, IEnter {
 
-    private String name;
-    private String owner;
-    private double realEstateValue;
+    private ArrayList<BuffaloMeat> stock;
 
     public Butchery(String name, String owner, double realEstateValue){
         super(name, owner, realEstateValue);
+        this.stock = new ArrayList<BuffaloMeat>();
     }
 
     public void work(Visitor visitor, int hours){
