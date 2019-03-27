@@ -48,8 +48,8 @@ public class Visitor {
         this.haunted = true;
     }
 
-    public void earns(double salary){
-        this.purse += salary;
+    public void earns(double wages){
+        this.purse += wages;
     }
 
     public void isCharged(double fee){
@@ -66,6 +66,6 @@ public class Visitor {
 
     public void writesReview(Museum museum, String body){
         Review review = new Review(body);
-        museum.leavesReview(review);
+        museum.isIssuedReview(review);
     }
 }

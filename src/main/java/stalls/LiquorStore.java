@@ -28,7 +28,7 @@ public class LiquorStore extends Stall implements ISecurity, IEnter {
     }
 
     public String enter(Visitor visitor){
-        return "You hear the " + this.getName() + ". What can I get ya? First round is on me.";
+        return "Welcome to the " + this.getName() + ". What can I get ya? First round is on me.";
     }
 
 }

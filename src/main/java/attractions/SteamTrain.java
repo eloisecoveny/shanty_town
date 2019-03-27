@@ -11,8 +11,8 @@ public class SteamTrain extends Attraction implements IWork, ITicket, IEnter {
     }
 
     public void work(Visitor visitor, int hours){
-        double salary = hours * 8.20;
-        visitor.earns(salary);
+        double wages = hours * 8.20;
+        visitor.earns(wages);
     }
 
     public void charge(Visitor visitor){

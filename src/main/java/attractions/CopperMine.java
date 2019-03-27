@@ -11,8 +11,8 @@ public class CopperMine extends Attraction implements ITicket, IEnter {
     }
 
     public void work(Visitor visitor, int hours){
-        double salary = hours * 5.50;
-        visitor.earns(salary);
+        double wages = hours * 5.50;
+        visitor.earns(wages);
     }
 
     public void charge(Visitor visitor){
